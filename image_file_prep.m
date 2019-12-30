@@ -9,7 +9,7 @@
 %Output: Convert the RGB image to a greyscale image with normalized
 %intensities.
 
-function modified = image_file_prep(img)  
+function grayscale = image_file_prep(img)  
     original = imread(img);
 
 % Convert unit8/unit16 image to a double image 
@@ -20,5 +20,5 @@ function modified = image_file_prep(img)
 
 % Convert 3 channel scaled RGB image to a scaled grayscale - dimension reduction
     grayscale = rgb2gray(scaled_img);
-    modified = imwrite(grayscale, 'grayscale.png');
+    imwrite(grayscale, 'grayscale.png');
 end
