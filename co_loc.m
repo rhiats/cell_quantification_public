@@ -69,6 +69,7 @@ function [overlap_location,num_overlap] = co_loc(no_overlap_chan_one, no_overlap
     end
     
     disp(num_overlap);
+    save('overlap_location');
 end
 
     
