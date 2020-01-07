@@ -1,13 +1,12 @@
 %Author: Rhia Singh 
 %Dates: November 18, 2019 
-%Purpose: Prepare image file for analysis using the subsequent algorithms. 
-
+%Purpose: Prepare image file for analysis by modifying file types.
  
-%Input: .PNG file of image. Split channel on Nikon (normalize the
-%intensities). Split channels and save in fiji to preserve the 3 dimensions needed for the functions. 
+%Input: .PNG file of GFP or tdt channel from the image. Split channels in
+%fiji. 
 
-%Output: Convert the RGB image to a greyscale image with normalized
-%intensities.
+%Output: Saved grayscale of image with necessary modifications for cell
+%identification.
 
 function grayscale = image_file_prep(img)  
     original = imread(img);
@@ -19,6 +18,6 @@ function grayscale = image_file_prep(img)
     scaled_img = mat2gray(double_image);
 
 % Convert 3 channel scaled RGB image to a scaled grayscale - dimension reduction
-    grayscale = rgb2gray(scaled_img);
+    grayscale = scaled_img;
     imwrite(grayscale, 'grayscale.png');
 end
